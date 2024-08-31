@@ -30,7 +30,7 @@ function New-LogEntry() {
     $Type = "1"
     if ($Warning) { $Type = "2" }
     if ($Error) { $Type = "3" }
-    Add-Content -Path "$Path\NameMapperLog-$(Get-Date -Format "yyyy-MM-dd").log" -Value "<![LOG[$Detail]LOG]!><time=""$((Get-Date).ToUniversalTime().ToString("HH:mm:ss.fff+00"))"" date=""$(Get-Date -Format "MM-dd-yyyy")"" component=""$Component"" context="""" type=""$Type"" thread="""" file=""$(Split-Path $MyInvocation.ScriptName -Leaf)"">"
+    Add-Content -Path "$Path\NameMapperLog-$(Get-Date -Format "yyyy-MM-dd").log" -Value "<![LOG[$Detail]LOG]!><time=""$((Get-Date).ToUniversalTime().ToString("HH:mm:ss.fff+00"))"" date=""$((Get-Date).ToUniversalTime().ToString("MM-dd-yyyy"))"" component=""$Component"" context="""" type=""$Type"" thread="""" file=""$(Split-Path $MyInvocation.ScriptName -Leaf)"">"
     
 }
 
