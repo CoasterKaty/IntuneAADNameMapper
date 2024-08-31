@@ -16,6 +16,7 @@ param(
     [string][Parameter(Mandatory=$true,ParameterSetName="Main", HelpMessage="Path to folder for writing log files")]$LogPath
 )
 
+# While we could automatically find the CA, in a large environment with multiple domains it takes a LONG time to discover, so instead specify it as a parameter.
 
 function New-LogEntry() {
     # Write log entry in format used by CMTrace
